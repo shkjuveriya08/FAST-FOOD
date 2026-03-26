@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Al-Baik Fast Food - Mumbai (Ismail Curtey Road)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff7f0 0%, #ffe5d9 100%);
+      color: #4e342e;
+      padding: 20px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: linear-gradient(145deg, #ffffff, #f5f5f5);
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 112, 67, 0.03) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-images {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    .main-image {
+      max-width: 100%;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .main-image:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 20px 0;
+      background: linear-gradient(45deg, #ff7043, #e64a19);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    h1 span {
+      color: #ff7043;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 30px 0 20px;
+      color: #6d4c41;
+      position: relative;
+      animation: slideIn 0.6s ease-out;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        color: #e64a19;
+        margin: 30px 0 15px;
+        text-align: left;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(45deg, #ff7043, #e64a19);
+      border-radius: 2px;
+    }
+
+    .highlight {
+      color: #e64a19;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .contact {
+      margin: 30px 0;
+      padding: 25px;
+      background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .phone {
+      font-size: 1.4rem;
+      color: #ff5722;
+      font-weight: bold;
+      margin: 15px 0;
+      animation: pulse 2s infinite;
+    }
+
+    .ribbon {
+      width: 100%;
+      background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .ribbon a {
+      text-decoration: none;
+      color: #5d4037;
+      background: linear-gradient(135deg, #ffccbc, #ffab91);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .ribbon a:hover {
+      background: linear-gradient(135deg, #ffab91, #ff8a65);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: linear-gradient(135deg, #ffffff, #fafafa);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: slideIn 0.8s ease-out;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    th {
+      background: linear-gradient(135deg, #ffd7c2, #ffccbc);
+      color: #5d4037;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    tr {
+      transition: all 0.3s ease;
+    }
+
+    tr:hover {
+      background: linear-gradient(135deg, #fff8f3, #fff0e8);
+      transform: scale(1.01);
+    }
+
+    .count {
+      margin: 0 12px;
+      color: #6d4c41;
+      font-weight: bold;
+      font-size: 1.1rem;
+      min-width: 30px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* Cart Styles */
+    .cart-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .cart-button {
+      background: linear-gradient(135deg, #4caf50, #388e3c);
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .cart-button:hover {
+      background: linear-gradient(135deg, #388e3c, #2e7d32);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #ff5722;
+      color: white;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .cart-modal, .checkout-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .cart-content, .checkout-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s ease;
+    }
+
+    .cart-item:hover {
+      background: #f9f9f9;
+    }
+
+    .cart-total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4caf50;
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #e8f5e8, #f1f8e9);
+      border-radius: 15px;
+    }
+
+    .checkout-button, .submit-order-button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #4caf50, #388e3c);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+
+    .checkout-button:hover, .submit-order-button:hover {
+      background: linear-gradient(135deg, #388e3c, #2e7d32);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+    }
+
+    .close-cart, .close-checkout {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .close-cart:hover, .close-checkout:hover {
+      color: #333;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #999;
+      font-size: 1.2rem;
+      margin: 50px 0;
+    }
+
+    /* Section styling */
+    section {
+      margin: 40px 0;
+      padding: 30px;
+      background: linear-gradient(135deg, #fafafa, #f5f5f5);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      animation: slideIn 0.8s ease-out;
+    }
+
+    /* Additional modern touches */
+    .section-icon {
+      font-size: 2rem;
+      margin-right: 10px;
+      animation: bounce 2s infinite;
+    }
+
+    .price-tag {
+      background: linear-gradient(135deg, #4caf50, #388e3c);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      white-space: nowrap; /* Ensures price tag doesn't break */
+    }
+
+    .add-btn {
+      background: linear-gradient(135deg, #ff7043, #e64a19);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 112, 67, 0.3);
+    }
+
+    .add-btn:hover {
+      background: linear-gradient(135deg, #e64a19, #d84315);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 112, 67, 0.4);
+    }
+
+    .add-btn-remove {
+        background: linear-gradient(135deg, #f48fb1, #e91e63) !important;
+        box-shadow: 0 4px 15px rgba(244, 143, 177, 0.3) !important;
+    }
+    
+    .add-btn-remove:hover {
+        background: linear-gradient(135deg, #e91e63, #c2185b) !important;
+        box-shadow: 0 6px 20px rgba(244, 143, 177, 0.4) !important;
+    }
+
+
+    /* Form Styles */
+    .checkout-form label {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #6d4c41;
+    }
+
+    .checkout-form input[type="text"],
+    .checkout-form input[type="tel"],
+    .checkout-form input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    .checkout-form input[type="text"]:focus,
+    .checkout-form input[type="tel"]:focus,
+    .checkout-form input[type="email"]:focus {
+      border-color: #ff7043;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.2);
+    }
+
+    .name-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .name-group > div {
+      flex: 1;
+    }
+
+    .name-group input {
+      margin-bottom: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cart-container">
+    <button class="cart-button" onclick="openCart()">
+      🛒 View Cart
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="header-images">
+      <img src="https://via.placeholder.com/80x80/ff7043/ffffff?text=Logo" alt="Al-Baik Logo" class="header-logo">
+      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fjp.pinterest.com%2Fpin%2F902549581581041659%2F&psig=AOvVaw0xgaxQFz7rmfiyJebao5Cx&ust=1762170021022000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJD3rImx05ADFQAAAAAdAAAAABAE" alt="Al-Baik Icon" class="header-logo">
+    </div>
+
+    <h1>Mini Al-Baik Fast Food <span>Mumbai</span></h1>
+    <p class="highlight">The taste of Jeddah, now in Mumbai! (Ismail Curtey Road)</p>
+    
+    <img src="https://via.placeholder.com/1140x250/ffab91/5d4037?text=Welcome+to+Mini+Al-Baik+Menu" alt="Main Restaurant Image" class="main-image">
+
+   <div class="ribbon">
+    <a href="#sectionChickenBurgers">🍔 Chicken Burgers</a>
+    <a href="#sectionGrills">🔥 Chicken Grills & Sandwiches</a>
+    <a href="#sectionVegSandwiches">🥪 Veg Sandwiches</a>
+    <a href="#sectionMomos">🥟 Chicken Momos</a>
+    <a href="#sectionChickenShawarma">🥙 Chicken Shawarma</a>
+    <a href="#sectionVegShawarma">🥙 Veg Shawarma</a>
+    <a href="#sectionChickenPizza">🍕 Chicken Pizza</a> 
+    <a href="#sectionVegPizza">🍕 Veg Pizza</a>
+    <a href="#sectionSides">🍟 Sides & Fries</a>
+    <a href="#sectionBroastedMore">🍗 Chicken Broasted & More</a>
+    <a href="#sectionBroastedBuckets">🧺 Chicken Broasted Buckets</a>
+    <a href="#sectionBeverages">🥤 Beverages</a>
+    <a href="#sectionContact">📞 Contact Us</a>
+</div>
+
+    
+    <section id="sectionChickenBurgers">
+        <h2><span class="section-icon">🍔</span>Burgers</h2>
+        
+        <h3>Chicken Burgers</h3> 
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Broasted</th> 
+                <th>Special</th> 
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🍔 Chicken Classic Burger</td>
+                <td><span class="price-tag">₹60</span></td>
+                <td><span class="price-tag">₹75</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Classic Burger (Broasted)', 60)">Add ₹60</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Classic Burger (Special)', 75)">Add ₹75</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🌶️ Chicken Szechuan Burger</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Szechuan Burger (Broasted)', 70)">Add ₹70</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Szechuan Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🌰 Chicken Shawarma Burger</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Shawarma Burger (Broasted)', 70)">Add ₹70</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Shawarma Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🔥 Chicken BBQ Burger</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken BBQ Burger (Broasted)', 70)">Add ₹70</button>
+                    <button class="add-btn" onclick="addToCart('Chicken BBQ Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🫔 Chicken Tandoori Burger</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Tandoori Burger (Broasted)', 70)">Add ₹70</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Tandoori Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧄 Chicken Garlic Burger</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Garlic Burger (Broasted)', 70)">Add ₹70</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Garlic Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🌶️ Chicken Peri Peri Burger</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Peri Peri Burger (Broasted)', 70)">Add ₹70</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Peri Peri Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🇲🇽 Chicken Mexican Burger</td>
+                <td><span class="price-tag">₹80</span></td>
+                <td><span class="price-tag">₹85</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Mexican Burger (Broasted)', 80)">Add ₹80</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Mexican Burger (Special)', 85)">Add ₹85</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🍔 Chicken Jumbo Burger</td>
+                <td><span class="price-tag">₹150</span></td>
+                <td><span class="price-tag">₹150</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Chicken Jumbo Burger (Broasted)', 150)">Add ₹150</button>
+                    <button class="add-btn" onclick="addToCart('Chicken Jumbo Burger (Special)', 150)">Add ₹150</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+        <section id="sectionVegBurgers">
+        <h2><span class="section-icon">🥦</span>Veg Burgers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🥬 Veg Patty Burger</td>
+                    <td><span class="price-tag">₹50</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Patty Burger', 50)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Veg Cheese Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Cheese Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🌶️ Szechuan Veg Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Szechuan Veg Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Szechuan Cheese Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Szechuan Cheese Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🇲🇽 Veg Tandoori Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Tandoori Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧄 Veg Garlic Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Garlic Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧄🧀 Veg Garlic Cheese Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Garlic Cheese Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🔥 Veg BBQ Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg BBQ Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🐔 Veg Chicken Style Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Chicken Style Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🇲🇽🧀 Mexican Veg Cheese Burger</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Mexican Veg Cheese Burger', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Paneer Tikka Burger</td>
+                    <td><span class="price-tag">₹65</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Paneer Tikka Burger', 65)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Paneer Tikka Cheese Burger</td>
+                    <td><span class="price-tag">₹65</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Paneer Tikka Cheese Burger', 65)">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="sectionGrills">
+        <h2><span class="section-icon">🔥</span>Chicken Grills & Sandwiches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Regular</th> 
+                    <th>Special/Cheese</th> 
+                    <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🔥 Chicken Grill</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><span class="price-tag">₹80</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken Grill (Regular)', 60)">Add ₹60</button>
+                        <button class="add-btn" onclick="addToCart('Chicken Grill (Special/Cheese)', 80)">Add ₹80</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🧀 Chicken Cheese Grill</td>
+                    <td><span class="price-tag">₹80</span></td>
+                    <td><span class="price-tag">₹100</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken Cheese Grill (Regular)', 80)">Add ₹80</button>
+                        <button class="add-btn" onclick="addToCart('Chicken Cheese Grill (Special/Cheese)', 100)">Add ₹100</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🌯 Chicken Shawarma Grill</td>
+                    <td><span class="price-tag">₹80</span></td>
+                    <td><span class="price-tag">₹100</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken Shawarma Grill (Regular)', 80)">Add ₹80</button>
+                        <button class="add-btn" onclick="addToCart('Chicken Shawarma Grill (Special/Cheese)', 100)">Add ₹100</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🧀 Chicken Shawarma Cheese</td>
+                    <td><span class="price-tag">₹100</span></td>
+                    <td><span class="price-tag">₹120</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken Shawarma Cheese (Regular)', 100)">Add ₹100</button>
+                        <button class="add-btn" onclick="addToCart('Chicken Shawarma Cheese (Special/Cheese)', 120)">Add ₹120</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🌿 Green Chicken Tikka Mayo</td>
+                    <td><span class="price-tag">₹90</span></td>
+                    <td><span class="price-tag">₹110</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Green Chicken Tikka Mayo (Regular)', 90)">Add ₹90</button>
+                        <button class="add-btn" onclick="addToCart('Green Chicken Tikka Mayo (Special/Cheese)', 110)">Add ₹110</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🎶 Green Chicken Tikka Music Grill</td>
+                    <td><span class="price-tag">₹120</span></td>
+                    <td><span class="price-tag">₹140</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Green Chicken Tikka Music Grill (Regular)', 120)">Add ₹120</button>
+                        <button class="add-btn" onclick="addToCart('Green Chicken Tikka Music Grill (Special/Cheese)', 140)">Add ₹140</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🧄 Chicken Tikka Garlic</td>
+                    <td><span class="price-tag">₹100</span></td>
+                    <td><span class="price-tag">₹120</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken Tikka Garlic (Regular)', 100)">Add ₹100</button>
+                        <button class="add-btn" onclick="addToCart('Chicken Tikka Garlic (Special/Cheese)', 120)">Add ₹120</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🧀 Chicken Tikka Garlic Cheese</td>
+                    <td><span class="price-tag">₹90</span></td>
+                    <td><span class="price-tag">₹120</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken Tikka Garlic Cheese (Regular)', 90)">Add ₹90</button>
+                        <button class="add-btn" onclick="addToCart('Chicken Tikka Garlic Cheese (Special/Cheese)', 120)">Add ₹120</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>🍗 Chicken BBQ Grill</td>
+                    <td><span class="price-tag">₹90</span></td>
+                    <td><span class="price-tag">₹120</span></td>
+                    <td>
+                        <button class="add-btn" onclick="addToCart('Chicken BBQ Grill (Regular)', 90)">Add ₹90</button>
+                        <button class="add-btn" onclick="addToCart('Chicken BBQ Grill (Special/Cheese)', 120)">Add ₹120</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="sectionVegSandwiches">
+    <h2><span class="section-icon">🥪</span>Veg Sandwiches</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Regular</th>
+                <th>Cheese/Grill</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🥪 Veg Sandwich</td>
+                <td><span class="price-tag">₹40</span></td>
+                <td><span class="price-tag">₹60</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Sandwich (Regular)', 40)">Add ₹40</button>
+                    <button class="add-btn" onclick="addToCart('Veg Sandwich (Cheese/Grill)', 60)">Add ₹60</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🥬 Veg Green Sandwich</td>
+                <td><span class="price-tag">₹60</span></td>
+                <td><span class="price-tag">₹80</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Green Sandwich (Regular)', 60)">Add ₹60</button>
+                    <button class="add-btn" onclick="addToCart('Veg Green Sandwich (Cheese/Grill)', 80)">Add ₹80</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Cheese Grills Sandwich</td>
+                <td><span class="price-tag">₹60</span></td>
+                <td><span class="price-tag">₹90</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Cheese Grills Sandwich (Regular)', 60)">Add ₹60</button>
+                    <button class="add-btn" onclick="addToCart('Cheese Grills Sandwich (Cheese/Grill)', 90)">Add ₹90</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🫙 Veg Mayo Cheese Grills</td>
+                <td><span class="price-tag">₹80</span></td>
+                <td><span class="price-tag">₹100</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Mayo Cheese Grills (Regular)', 80)">Add ₹80</button>
+                    <button class="add-btn" onclick="addToCart('Veg Mayo Cheese Grills (Cheese/Grill)', 100)">Add ₹100</button>
+                </td>
+            </tr>
+            <tr>
+                <td>⭐ Sticker Grills Sandwich</td>
+                <td><span class="price-tag">₹60</span></td>
+                <td><span class="price-tag">₹80</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Sticker Grills Sandwich (Regular)', 60)">Add ₹60</button>
+                    <button class="add-btn" onclick="addToCart('Sticker Grills Sandwich (Cheese/Grill)', 80)">Add ₹80</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Grill Cheese Sandwich</td>
+                <td><span class="price-tag">₹80</span></td>
+                <td><span class="price-tag">₹100</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Grill Cheese Sandwich (Regular)', 80)">Add ₹80</button>
+                    <button class="add-btn" onclick="addToCart('Grill Cheese Sandwich (Cheese/Grill)', 100)">Add ₹100</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Veg Melting Sandwich</td>
+                <td><span class="price-tag">₹60</span></td>
+                <td><span class="price-tag">₹140</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Melting Sandwich (Regular)', 60)">Add ₹60</button>
+                    <button class="add-btn" onclick="addToCart('Veg Melting Sandwich (Cheese/Grill)', 140)">Add ₹140</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Plain Cheese Grill</td>
+                <td><span class="price-tag">₹80</span></td>
+                <td><span class="price-tag">₹90</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Plain Cheese Grill (Regular)', 80)">Add ₹80</button>
+                    <button class="add-btn" onclick="addToCart('Plain Cheese Grill (Cheese/Grill)', 90)">Add ₹90</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧄 Cheese Garlic Bread</td>
+                <td><span class="price-tag">₹60</span></td>
+                <td><span class="price-tag">₹80</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Cheese Garlic Bread (Regular)', 60)">Add ₹60</button>
+                    <button class="add-btn" onclick="addToCart('Cheese Garlic Bread (Cheese/Grill)', 80)">Add ₹80</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section id="sectionMomos">
+    <h2><span class="section-icon">🥟</span>Chicken Momos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🔥 Chicken Fried Momos</td>
+                <td><span class="price-tag">₹50</span></td>
+                <td><button class="add-btn" onclick="addToCart('Chicken Fried Momos', 50)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>🍕 Pizza Style Momos</td>
+                <td><span class="price-tag">₹130</span></td>
+                <td><button class="add-btn" onclick="addToCart('Pizza Style Momos', 130)">Add to Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+   <section id="sectionShawarma">
+        <h2><span class="section-icon">🥙</span>Shawarma Rolls</h2>
+        <h3>Chicken Shawarma Rolls</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🌯 Classic Chicken Shawarma</td>
+                    <td><span class="price-tag">₹50</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Classic Chicken Shawarma', 50)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Chicken Cheese Shawarma</td>
+                    <td><span class="price-tag">₹70</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Chicken Cheese Shawarma', 70)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>➕ Extra Chicken Filling Shawarma</td>
+                    <td><span class="price-tag">₹70</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Extra Chicken Filling Shawarma', 70)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>⏳ Chicken Arabic Shawarma</td>
+                    <td><span class="price-tag">₹70</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Chicken Arabic Shawarma', 70)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🥙 Jumbo Chicken Shawarma</td>
+                    <td><span class="price-tag">₹110</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Jumbo Chicken Shawarma', 110)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Jumbo Cheese Shawarma</td>
+                    <td><span class="price-tag">₹130</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Jumbo Cheese Shawarma', 130)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🍗 Broasted Nugget Shawarma</td>
+                    <td><span class="price-tag">₹80</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Broasted Nugget Shawarma', 80)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Broasted Nugget Cheese Shawarma</td>
+                    <td><span class="price-tag">₹100</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Broasted Nugget Cheese Shawarma', 100)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>⭐ Al-Baik Special Shawarma</td>
+                    <td><span class="price-tag">₹130</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Al-Baik Special Shawarma', 130)">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Veg Shawarma Rolls</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🥦 Veg Pattice Shawarma</td>
+                    <td><span class="price-tag">₹50</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Pattice Shawarma', 50)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Veg Pattice Cheese Shawarma</td>
+                    <td><span class="price-tag">₹70</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Veg Pattice Cheese Shawarma', 70)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧀 Paneer Shawarma</td>
+                    <td><span class="price-tag">₹70</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Paneer Shawarma', 70)">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+        
+        <section id="sectionVegShawarma">
+    <h2><span class="section-icon">🥙</span>Veg Shawarma Rolls</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🥦 Veg Pattice Shawarma</td>
+                <td><span class="price-tag">₹50</span></td>
+                <td><button class="add-btn" onclick="addToCart('Veg Pattice Shawarma', 50)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>🧀 Veg Pattice Cheese Shawarma</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><button class="add-btn" onclick="addToCart('Veg Pattice Cheese Shawarma', 70)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>🧀 Paneer Shawarma</td>
+                <td><span class="price-tag">₹70</span></td>
+                <td><button class="add-btn" onclick="addToCart('Paneer Shawarma', 70)">Add to Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="sectionChickenPizza">
+    <h2><span class="section-icon">🍕</span>Chicken Pizza</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>8 Inch</th>
+                <th>10 Inch</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🍕 Classic Chicken Pizza</td>
+                <td><span class="price-tag">₹160</span></td>
+                <td><span class="price-tag">₹230</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Classic Chicken Pizza (8 inch)', 160)">Add ₹160</button>
+                    <button class="add-btn" onclick="addToCart('Classic Chicken Pizza (10 inch)', 230)">Add ₹230</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🥙 Shawarma Pizza</td>
+                <td><span class="price-tag">₹170</span></td>
+                <td><span class="price-tag">₹240</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Shawarma Pizza (8 inch)', 170)">Add ₹170</button>
+                    <button class="add-btn" onclick="addToCart('Shawarma Pizza (10 inch)', 240)">Add ₹240</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🔥 BBQ Chicken Pizza</td>
+                <td><span class="price-tag">₹180</span></td>
+                <td><span class="price-tag">₹260</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('BBQ Chicken Pizza (8 inch)', 180)">Add ₹180</button>
+                    <button class="add-btn" onclick="addToCart('BBQ Chicken Pizza (10 inch)', 260)">Add ₹260</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Melting Chicken Pizza</td>
+                <td><span class="price-tag">₹210</span></td>
+                <td><span class="price-tag">₹300</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Melting Chicken Pizza (8 inch)', 210)">Add ₹210</button>
+                    <button class="add-btn" onclick="addToCart('Melting Chicken Pizza (10 inch)', 300)">Add ₹300</button>
+                </td>
+            </tr>
+            <tr>
+                <td>⭐ Special Chicken Pizza</td>
+                <td><span class="price-tag">₹220</span></td>
+                <td><span class="price-tag">₹300</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Special Chicken Pizza (8 inch)', 220)">Add ₹220</button>
+                    <button class="add-btn" onclick="addToCart('Special Chicken Pizza (10 inch)', 300)">Add ₹300</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="sectionVegPizza">
+    <h2><span class="section-icon">🍕</span>Veg Pizzas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>8 Inch</th>
+                <th>10 Inch</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🧀 Plain Cheese Pizza</td>
+                <td><span class="price-tag">₹150</span></td>
+                <td><span class="price-tag">₹230</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Plain Cheese Pizza (8 inch)', 150)">Add ₹150</button>
+                    <button class="add-btn" onclick="addToCart('Plain Cheese Pizza (10 inch)', 230)">Add ₹230</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🥦 Veg Pizza</td>
+                <td><span class="price-tag">₹130</span></td>
+                <td><span class="price-tag">₹170</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Pizza (8 inch)', 130)">Add ₹130</button>
+                    <button class="add-btn" onclick="addToCart('Veg Pizza (10 inch)', 170)">Add ₹170</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🇮🇹 Veg Italian Pizza</td>
+                <td><span class="price-tag">₹140</span></td>
+                <td><span class="price-tag">₹180</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Italian Pizza (8 inch)', 140)">Add ₹140</button>
+                    <button class="add-btn" onclick="addToCart('Veg Italian Pizza (10 inch)', 180)">Add ₹180</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧄 Veg Garlic Pizza</td>
+                <td><span class="price-tag">₹140</span></td>
+                <td><span class="price-tag">₹180</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Garlic Pizza (8 inch)', 140)">Add ₹140</button>
+                    <button class="add-btn" onclick="addToCart('Veg Garlic Pizza (10 inch)', 180)">Add ₹180</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🥚 Veg Mayo Pizza</td>
+                <td><span class="price-tag">₹150</span></td>
+                <td><span class="price-tag">₹180</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Mayo Pizza (8 inch)', 150)">Add ₹150</button>
+                    <button class="add-btn" onclick="addToCart('Veg Mayo Pizza (10 inch)', 180)">Add ₹180</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Veg Melting Pizza</td>
+                <td><span class="price-tag">₹160</span></td>
+                <td><span class="price-tag">₹200</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Melting Pizza (8 inch)', 160)">Add ₹160</button>
+                    <button class="add-btn" onclick="addToCart('Veg Melting Pizza (10 inch)', 200)">Add ₹200</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🍹 Veg Cocktail Pizza</td>
+                <td><span class="price-tag">₹150</span></td>
+                <td><span class="price-tag">₹210</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Cocktail Pizza (8 inch)', 150)">Add ₹150</button>
+                    <button class="add-btn" onclick="addToCart('Veg Cocktail Pizza (10 inch)', 210)">Add ₹210</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Veg Paneer Pizza</td>
+                <td><span class="price-tag">₹180</span></td>
+                <td><span class="price-tag">₹200</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Paneer Pizza (8 inch)', 180)">Add ₹180</button>
+                    <button class="add-btn" onclick="addToCart('Veg Paneer Pizza (10 inch)', 200)">Add ₹200</button>
+                </td>
+            </tr>
+            <tr>
+                <td>🧀 Veg Cheese Burst Pizza</td>
+                <td><span class="price-tag">₹180</span></td>
+                <td><span class="price-tag">₹260</span></td>
+                <td>
+                    <button class="add-btn" onclick="addToCart('Veg Cheese Burst Pizza (8 inch)', 180)">Add ₹180</button>
+                    <button class="add-btn" onclick="addToCart('Veg Cheese Burst Pizza (10 inch)', 260)">Add ₹260</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    
+
+    <section id="sectionSides">
+        <h2><span class="section-icon">🍟</span>Sides & Extras</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🍟 French Fries (Regular)</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('French Fries (Regular)', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🍟 French Fries (Large)</td>
+                    <td><span class="price-tag">₹90</span></td>
+                    <td><button class="add-btn" onclick="addToCart('French Fries (Large)', 90)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🧄 Garlic Dip Sauce</td>
+                    <td><span class="price-tag">₹30</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Garlic Dip Sauce', 30)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🥗 Coleslaw Salad</td>
+                    <td><span class="price-tag">₹50</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Coleslaw Salad', 50)">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+<section id="sectionBroastedMore">
+    <h2><span class="section-icon">🍗</span>Chicken Broasted & More</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2 Pcs Broast</td>
+                <td><span class="price-tag">₹140</span></td>
+                <td><button class="add-btn" onclick="addToCart('2 Pcs Broast', 140)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>2 Pcs Broast Meal (with Fries)</td>
+                <td><span class="price-tag">₹180</span></td>
+                <td><button class="add-btn" onclick="addToCart('2 Pcs Broast Meal (with Fries)', 180)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>4 Pcs Broast</td>
+                <td><span class="price-tag">₹250</span></td>
+                <td><button class="add-btn" onclick="addToCart('4 Pcs Broast', 250)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>4 Pcs Broast Meal (with Fries)</td>
+                <td><span class="price-tag">₹300</span></td>
+                <td><button class="add-btn" onclick="addToCart('4 Pcs Broast Meal (with Fries)', 300)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Chicken Strips (3 Pcs)</td>
+                <td><span class="price-tag">₹110</span></td>
+                <td><button class="add-btn" onclick="addToCart('Chicken Strips (3 Pcs)', 110)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Chicken Nuggets (6 Pcs)</td>
+                <td><span class="price-tag">₹120</span></td>
+                <td><button class="add-btn" onclick="addToCart('Chicken Nuggets (6 Pcs)', 120)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Chicken Popcorn</td>
+                <td><span class="price-tag">₹100</span></td>
+                <td><button class="add-btn" onclick="addToCart('Chicken Popcorn', 100)">Add to Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="sectionBroastedBuckets">
+    <h2><span class="section-icon">🧺</span>Chicken Broasted Buckets</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mini Bucket (4 Pcs Broast + Fries + Dip)</td>
+                <td><span class="price-tag">₹350</span></td>
+                <td><button class="add-btn" onclick="addToCart('Mini Bucket', 350)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Medium Bucket (6 Pcs Broast + Fries + Dip)</td>
+                <td><span class="price-tag">₹500</span></td>
+                <td><button class="add-btn" onclick="addToCart('Medium Bucket', 500)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Family Bucket (8 Pcs Broast + Fries + Dip)</td>
+                <td><span class="price-tag">₹650</span></td>
+                <td><button class="add-btn" onclick="addToCart('Family Bucket', 650)">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Jumbo Bucket (12 Pcs Broast + Fries + Dip)</td>
+                <td><span class="price-tag">₹950</span></td>
+                <td><button class="add-btn" onclick="addToCart('Jumbo Bucket', 950)">Add to Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section id="sectionBeverages">
+        <h2><span class="section-icon">🥤</span>Beverages</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🥤 Soft Drink (Regular)</td>
+                    <td><span class="price-tag">₹40</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Soft Drink (Regular)', 40)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>🥤 Soft Drink (Large)</td>
+                    <td><span class="price-tag">₹60</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Soft Drink (Large)', 60)">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>💧 Mineral Water (500ml)</td>
+                    <td><span class="price-tag">₹20</span></td>
+                    <td><button class="add-btn" onclick="addToCart('Mineral Water (500ml)', 20)">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section id="sectionContact" class="contact">
+      <h2><span class="section-icon">📞</span>Contact Us</h2>
+      <p>
+        For orders, inquiries, or catering, please contact us directly:<br>
+        <span class="phone">7666788885 / 76667 88886 </span>
+      </p>
+      <p>
+        📍 Address: 82 Sharif Manzil, Ground Floor,
+Ismail Curtey Road, Pydhonie, Mumbai - 400003
+      </p>
+    </section>
+
+  </div>
+
+  <div class="cart-modal" id="cart-modal" onclick="if(event.target===this) closeCart()">
+    <div class="cart-content">
+      <button class="close-cart" onclick="closeCart()">&times;</button>
+      <h2>🛒 Your Cart</h2>
+      <div id="cart-items">
+        </div>
+      <div class="cart-total" id="cart-total">Total: ₹0</div>
+      <button class="checkout-button" onclick="checkout()">🎁 Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <div class="checkout-modal" id="checkout-modal" onclick="if(event.target===this) closeCheckout()">
+    <div class="checkout-content">
+      <button class="close-checkout" onclick="closeCheckout()">&times;</button>
+      <h2>📋 Place Your Order</h2>
+      <p class="form-total" id="checkout-total">Order Total: ₹0</p>
+      <form class="checkout-form" onsubmit="submitOrder(event)">
+        <h3>🏠 Delivery Details</h3>
+        <div class="name-group">
+          <div>
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div>
+            <label for="middleName">Middle Name (Optional)</label>
+            <input type="text" id="middleName" name="middleName">
+          </div>
+          <div>
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        <label for="phone">Phone No. *</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" required title="Enter a valid phone number">
+        <label for="address">Full Delivery Address *</label>
+        <input type="text" id="address" name="address" required>
+        <label for="email">Email (Optional)</label>
+        <input type="email" id="email" name="email">
+
+        <h3>💳 Select Payment Method</h3>
+        <div class="payment-options">
+          <label class="radio-label">
+            <input type="radio" name="paymentMethod" value="Cash on Delivery (COD)" checked onchange="togglePaymentDetails(false)">
+            💰 Cash on Delivery (COD)
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="paymentMethod" value="Google Pay / UPI" onchange="togglePaymentDetails(true)">
+            🟢 Google Pay / UPI
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="paymentMethod" value="Credit / Debit Card" onchange="togglePaymentDetails(true)">
+            💳 Credit / Debit Card
+          </label>
+        </div>
+        
+        <div id="payment-details-input" style="display:none; margin-top: 15px;">
+            <p style="color:#e64a19; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600;"> 
+                *Note: This is a simulation. No real payment will be processed.
+            </p>
+            <label for="cardDetails">Payment Details (for simulation)</label>
+            <input type="text" id="cardDetails" placeholder="Card number / UPI ID">
+        </div>
+
+        <button type="submit" class="submit-order-button" style="margin-top: 25px;">
+          🚀 Submit Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    let cart = {}; // ItemName: { quantity: X, price: Y }
+
+    // Helper to get total price
+    function getTotalPrice() {
+        let total = 0;
+        for (const item in cart) {
+            total += cart[item].quantity * cart[item].price;
+        }
+        return total;
+    }
+
+    // Function to add item to cart
+    function addToCart(itemName, price) {
+        if (cart[itemName]) {
+            cart[itemName].quantity++;
+        } else {
+            cart[itemName] = { quantity: 1, price: price };
+        }
+        updateCart();
+    }
+
+    // Function to remove item from cart
+    function removeFromCart(itemName) {
+        if (cart[itemName]) {
+            cart[itemName].quantity--;
+            if (cart[itemName].quantity <= 0) {
+                delete cart[itemName];
+            }
+        }
+        updateCart();
+    }
+
+    // Function to update the cart UI
+    function updateCart() {
+        const cartItemsContainer = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+        
+        let html = '';
+        let count = 0;
+
+        for (const item in cart) {
+            count += cart[item].quantity;
+            html += `
+            <div class="cart-item">
+                <div>
+                    <strong>${item}</strong><br>
+                    <span class="price-tag">₹${cart[item].price}</span> x ${cart[item].quantity}
+                </div>
+                <div style="text-align: right;">
+                    <strong>₹${(cart[item].quantity * cart[item].price).toFixed(0)}</strong>
+                    <div style="margin-top: 5px;">
+                        <button class="add-btn add-btn-remove" onclick="removeFromCart('${item}')">-</button>
+                        <span style="margin:0 10px;">${cart[item].quantity}</span>
+                        <button class="add-btn" onclick="addToCart('${item}', ${cart[item].price})">+</button>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        cartItemsContainer.innerHTML = html || '<p class="empty-cart">Your cart is empty. Start adding items!</p>';
+        cartTotal.textContent = `Total: ₹${getTotalPrice()}`;
+        document.getElementById("cart-count").textContent = count;
+    }
+
+    // Modal Controls
+    function openCart() {
+        document.getElementById("cart-modal").style.display = "block";
+        updateCart();
+    }
+
+    function closeCart() {
+        document.getElementById("cart-modal").style.display = "none";
+    }
+
+    function checkout() {
+        if (getTotalPrice() === 0) {
+            alert("Your cart is empty. Please add items to proceed to checkout.");
+            return;
+        }
+        closeCart();
+        document.getElementById("checkout-modal").style.display = "block";
+        document.getElementById("checkout-total").textContent = `Order Total: ₹${getTotalPrice()}`;
+    }
+
+    function closeCheckout() {
+        document.getElementById("checkout-modal").style.display = "none";
+    }
+
+    function togglePaymentDetails(show) {
+        document.getElementById("payment-details-input").style.display = show ? "block" : "none";
+    }
+
+    // Order Submission Logic (Uses server.js)
+    async function submitOrder(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const firstName = document.getElementById("firstName").value.trim();
+        const middleName = document.getElementById("middleName").value.trim();
+        const lastName = document.getElementById("lastName").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked')?.value || "Cash on Delivery";
+
+        if (getTotalPrice() === 0) {
+            alert("Your cart is empty. Cannot submit order.");
+            return;
+        }
+
+        // 🧩 PINCODE check before sending to server (simplified to check for 4XXXXX)
+        const match = address.match(/\b4\d{5}\b/);
+        if (!match) {
+            alert("📍 Please include a Mumbai PIN code (400001–400050) in your address.");
+            return;
+        }
+
+        const pincode = parseInt(match[0]);
+        if (pincode < 400001 || pincode > 400050) {
+            alert("🚫 Sorry! We only deliver between Colaba and Bandra (PINs 400001–400050).");
+            return;
+        }
+
+        const total = getTotalPrice();
+        const itemsArray = Object.entries(cart).map(([name, val]) => ({
+            name,
+            quantity: val.quantity,
+            price: val.price,
+            total: val.quantity * val.price,
+        }));
+
+        const orderData = {
+            name: `${firstName} ${middleName} ${lastName}`,
+            address: address,
+            cart: itemsArray, 
+            phone: phone,
+            email: email,
+            totalAmount: total,
+            paymentMethod: selectedPayment,
+        };
+
+        try {
+            // Note: The structure sent to the server now matches the exact required format in server.js
+            const res = await fetch("http://localhost:3000/api/order", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(orderData),
+            });
+
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Order submission failed.");
+
+            // Success
+            alert(`✅ Order Submitted! Your Order ID is: ${data.id}. Total: ₹${total}. Your order will be delivered soon!`);
+            
+            // Reset cart and close modal
+            cart = {};
+            updateCart();
+            closeCheckout();
+
+        } catch (error) {
+            console.error("Order Error:", error);
+            alert(`❌ Failed to submit order: ${error.message}. Please ensure your server.js is running.`);
+        }
+    }
+    
+    // Initial load
+    updateCart();
+
+  </script>
+</body>
+</html>

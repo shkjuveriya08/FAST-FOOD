@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Admin Dashboard | Mini Al-Baik</title>
+  <style>
+    body {
+        font-family: Poppins, sans-serif;
+        background: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #c0392b;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+    .order-box {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px auto;
+        max-width: 600px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.15);
+        border-left: 5px solid #ff7043;
+        transition: transform 0.2s;
+    }
+    .order-box:hover {
+        transform: translateY(-3px);
+    }
+    .order-box h3 {
+        margin: 0 0 10px;
+        color: #2c3e50;
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 5px;
+    }
+    .order-box p {
+        margin: 6px 0;
+        font-size: 0.95rem;
+    }
+    .order-box b {
+        color: #34495e;
+    }
+    .total-amount {
+        font-weight: bold;
+        color: #c0392b; /* Red color for amount */
+        font-size: 1.1rem;
+    }
+    .status-pending {
+        color: #f39c12; /* Orange for pending */
+        font-weight: bold;
+    }
+    .items-list {
+        margin-top: 10px;
+        padding: 10px;
+        background: #fdf2ed;
+        border-radius: 5px;
+        border: 1px solid #ffccbc;
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 Mini Al-Baik Admin Orders Dashboard</h1>
+  <div id="ordersContainer">Loading orders…</div>
+
+  <script>
+    async function loadOrders() {
+      try {
+        const res = await fetch("http://localhost:3000/api/orders");
+        const orders = await res.json();
+        const container = document.getElementById("ordersContainer");
+        container.innerHTML = "";
+
+        if (orders.length === 0) {
+          container.innerHTML = "<p style='text-align: center; font-size: 1.2rem; color: #777;'>No orders yet.</p>";
+          return;
+        }
+
+        orders.forEach(o => {
+          const div = document.createElement("div");
+          div.className = "order-box";
+          
+          // Updated template to display all essential details
+          div.innerHTML = `
+            <h3>🧾 Order ID: ${o.id}</h3>
+            <p><b>Date:</b> ${o.date}</p>
+            <hr style="border: none; border-top: 1px dashed #ddd; margin: 10px 0;">
+            <p><b>Name:</b> ${o.name}</p>
+            <p><b>Phone:</b> ${o.phone || 'N/A'}</p>
+            <p><b>Address:</b> ${o.address}</p>
+            <p><b>Email:</b> ${o.email || 'N/A'}</p>
+            <hr style="border: none; border-top: 1px dashed #ddd; margin: 10px 0;">
+            <p><b>Total Amount:</b> <span class="total-amount">₹${o.totalAmount}</span></p>
+            <p><b>Payment Method:</b> ${o.paymentMethod || 'N/A'}</p>
+            <p><b>Status:</b> <span class="status-pending">${o.status}</span></p>
+            <div class="items-list">
+                <b>Items Ordered (${o.cart.length}):</b><br>
+                ${Array.isArray(o.cart)
+                    ? o.cart.map(i => `${i.quantity} x ${i.name} (@₹${i.price})`).join('<br>')
+                    : 'N/A'}
+            </div>
+          `;
+          container.appendChild(div);
+        });
+
+      } catch (error) {
+        console.error("Error loading orders:", error);
+        document.getElementById("ordersContainer").innerHTML = "<p style='text-align: center; color: red;'>❌ Error connecting to the backend server. Make sure server.js is running.</p>";
+      }
+    }
+
+    // Load orders on page load
+    loadOrders();
+
+    // Optionally, refresh orders every 30 seconds
+    setInterval(loadOrders, 30000); 
+  </script>
+</body>
+</html>
